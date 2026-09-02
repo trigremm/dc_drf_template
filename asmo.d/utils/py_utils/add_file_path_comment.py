@@ -1,5 +1,4 @@
-# bonus.d/utils.d/add_file_path_comment.py
-# https://github.com/trigremm/wiki_best_practices/blob/main/bonus.d/utils.d/add_file_path_comment.py
+# asmo.d/utils/py_utils/add_file_path_comment.py
 import argparse
 import os
 
@@ -86,8 +85,14 @@ def add_file_path_comment(root_dir: str, ignore_files: list, ignore_dirs: list) 
                         not isinstance(comment_syntax, tuple)
                         and lines[0].strip().startswith(comment_syntax)
                         and (
-                            (file in ["Dockerfile", "Makefile"] and lines[0].strip().endswith(file))
-                            or any(lines[0].strip().endswith(ext) for ext in process_extensions)
+                            (
+                                file in ["Dockerfile", "Makefile"]
+                                and lines[0].strip().endswith(file)
+                            )
+                            or any(
+                                lines[0].strip().endswith(ext)
+                                for ext in process_extensions
+                            )
                         )
                     )
                 ):
@@ -99,7 +104,9 @@ def add_file_path_comment(root_dir: str, ignore_files: list, ignore_dirs: list) 
 
                 # Prepare the new comment
                 if isinstance(comment_syntax, tuple):
-                    new_comment = f"{comment_syntax[0]} {relative_path} {comment_syntax[1]}\n"
+                    new_comment = (
+                        f"{comment_syntax[0]} {relative_path} {comment_syntax[1]}\n"
+                    )
                 else:
                     new_comment = f"{comment_syntax} {relative_path}\n"
 
@@ -112,7 +119,9 @@ def add_file_path_comment(root_dir: str, ignore_files: list, ignore_dirs: list) 
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Add file path comments to project files.")
+    parser = argparse.ArgumentParser(
+        description="Add file path comments to project files."
+    )
     parser.add_argument(
         "project_directory",
         nargs="?",
