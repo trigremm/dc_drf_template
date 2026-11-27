@@ -1,4 +1,4 @@
-# dc.d/wiki.d/generate_howto_deploy.py
+# asmo.d/utils/py_utils/generate_howto_deploy.py
 # version 2024-06-18
 import argparse
 
@@ -55,7 +55,9 @@ systemctl restart nginx
 
 def validate_repo_url(repo_url):
     if not repo_url.startswith(("https://gitlab.com/", "https://github.com/")):
-        raise argparse.ArgumentTypeError("Repo URL must start with 'https://gitlab.com/' or 'https://github.com/'")
+        raise argparse.ArgumentTypeError(
+            "Repo URL must start with 'https://gitlab.com/' or 'https://github.com/'"
+        )
 
 
 def parse_args():

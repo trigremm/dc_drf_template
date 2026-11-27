@@ -1,3 +1,4 @@
+# core/settings.py
 """
 Django settings for core project.
 
@@ -15,8 +16,15 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-from .celery_schedule import CELERY_BEAT_SCHEDULE  # noqa: F401, Required for celery beat
-from .envs import database_config, django_config, email_config, mailgun_config, redis_config
+from .celery_schedule import (
+    CELERY_BEAT_SCHEDULE,  # noqa: F401, Required for celery beat
+)
+from .envs import (
+    database_config,
+    django_config,
+    email_config,
+    redis_config,
+)
 from .inits import init_sentry  # noqa: F401, for sentry
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -232,7 +240,6 @@ SPECTACULAR_SETTINGS = {
     # "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
     # "REDOC_DIST": "SIDECAR",
 }
-
 
 
 # -----------------------------------

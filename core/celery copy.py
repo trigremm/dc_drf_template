@@ -1,5 +1,4 @@
-# core/celery.py
-from __future__ import absolute_import, unicode_literals
+# core/celery copy.py
 
 import os
 

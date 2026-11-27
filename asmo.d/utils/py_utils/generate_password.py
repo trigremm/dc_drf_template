@@ -1,5 +1,6 @@
+# asmo.d/utils/py_utils/generate_password.py
 # from uuid import uuid4; print("\n".join(f"{str(uuid4())}-{str(uuid4()).upper()}" for _ in range(20)))
 
 from uuid import uuid4
 
-print("\n".join(f"{str(uuid4())}-{str(uuid4()).upper()}" for _ in range(20)))
+print("\n".join(f"{uuid4()!s}-{str(uuid4()).upper()}" for _ in range(20)))
